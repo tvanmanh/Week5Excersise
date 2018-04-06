@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:padding="16dp"
+    android:background="#02064e"
+    >
+
+    <ListView
+        android:id="@+id/lvTask"
+        android:layout_weight="9"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"></ListView>
+    <Button
+        android:id="@+id/btnAddTask"
+        android:background="#1aff00"
+        android:text="ADD TASK"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:background="#050e51"
+    >
+<LinearLayout
+    android:layout_weight="7"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvtask"
+        android:textSize="20sp"
+        android:textColor="#2de1b4"
+        android:text="learning english"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvdate"
+        android:textColor="#e2c90a"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:text="28/12/92"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+    <TextView
+        android:id="@+id/tvpriority"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#ff00"
+        android:text="high"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>
