@@ -13,6 +13,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 
 /**
@@ -54,22 +55,22 @@ public class DoneFragment extends Fragment {
         view = inflater.inflate(R.layout.done_fragment, container, false);
         lvDone = (ListView) view.findViewById(R.id.lvDone);
         arrayList = new ArrayList<>();
-        realm = Realm.getDefaultInstance();
+ //       realm = Realm.getDefaultInstance();
 //        realm.executeTransaction(new Realm.Transaction() {
 //            @Override
 //            public void execute(Realm realm) {
 //                realm.delete(TaskItem.class);
 //            }
 //        });
-        if(realm != null){
-            RealmResults<TaskItem> TaskItems = realm.where(TaskItem.class).findAll();
-            if(TaskItems.size()>0)
-            {
-                for(int i = 0; i<TaskItems.size(); i++){
-                    arrayList.add(TaskItems.get(i));
-
-                }
-            }}
+//        if(realm != null){
+//            RealmResults<TaskItem> TaskItems = realm.where(TaskItem.class).findAll();
+//            if(TaskItems.size()>0)
+//            {
+//                for(int i = 0; i<TaskItems.size(); i++){
+//                    arrayList.add(TaskItems.get(i));
+//
+//                }
+//            }}
         adapter = new TaskItemAdapter(getActivity(), arrayList, R.layout.lvtaskitem);
         lvDone.setAdapter(adapter);
 
@@ -81,18 +82,18 @@ public class DoneFragment extends Fragment {
 
         arrayList.add(new TaskItem(nameTask, Date, priority));
         adapter.notifyDataSetChanged();
-         realm.executeTransaction(new Realm.Transaction() {
-             @Override
-             public void execute(Realm realm) {
-
-                 TaskItem taskItem = realm.createObject(TaskItem.class);
-                 taskItem.setNameTask(nameTask);
-                 taskItem.setDate(Date);
-                 taskItem.setPriority(priority);
-
-
-             }
-         });
+//         realm.executeTransaction(new Realm.Transaction() {
+//             @Override
+//             public void execute(Realm realm) {
+//
+//                 TaskItem taskItem = realm.createObject(TaskItem.class);
+//                 taskItem.setNameTask(nameTask);
+//                 taskItem.setDate(Date);
+//                 taskItem.setPriority(priority);
+//
+//
+//             }
+//         });
 
     }
 }
